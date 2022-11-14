@@ -14,6 +14,11 @@ class MyThemeData {
         fontWeight: FontWeight.bold,
       ),
     ),
+    bottomNavigationBarTheme: BottomNavigationBarThemeData(
+      backgroundColor: colorGold,
+      selectedItemColor: colorBlack,
+      unselectedItemColor: Colors.white,
+    ),
   );
 
   static ThemeData darkTheme = ThemeData(
