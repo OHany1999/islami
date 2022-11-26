@@ -6,7 +6,11 @@ class MyThemeData {
 
   static ThemeData lightTheme = ThemeData(
     scaffoldBackgroundColor: Colors.transparent,
-    appBarTheme: AppBarTheme(backgroundColor: Colors.transparent, elevation: 0),
+    appBarTheme: AppBarTheme(
+      backgroundColor: Colors.transparent,
+      elevation: 0,
+      iconTheme: IconThemeData(color: colorBlack),
+    ),
     textTheme: TextTheme(
       headline1: TextStyle(
         fontSize: 30,
