@@ -68,7 +68,15 @@ class _SuraDetailsState extends State<SuraDetails> {
     // قسملي اللي جوه الفايل لكذا حاجة بناء علي سطر سطر
     List<String> lines = content.split('\n');
     verses = lines;
-    print(lines);
     setState(() {});
   }
+  // future تعني لاتنتظر حتي تاتي الداتا واكمل للسطر اللي بعده
+  // void loadFile(int index) {
+  //   Future<String> content = rootBundle.loadString('assets/files/${index + 1}.txt');
+  //   // قسملي اللي جوه الفايل لكذا حاجة بناء علي سطر سطر
+  //   List<String> lines = content.split('\n');
+  //   verses = lines;
+  //   setState(() {});
+  // }
+
 }
