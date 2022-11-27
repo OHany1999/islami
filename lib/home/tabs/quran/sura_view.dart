@@ -46,8 +46,8 @@ class _SuraDetailsState extends State<SuraDetails> {
                   separatorBuilder: (context, index) => Divider(
                     thickness: 1,
                     color: MyThemeData.colorGold,
-                    indent: 30,
-                    endIndent: 30,
+                    indent: 29,
+                    endIndent: 29,
                   ),
                   itemBuilder: (context, index) => Text(
                     verses[index],
