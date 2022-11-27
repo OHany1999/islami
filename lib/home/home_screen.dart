@@ -37,6 +37,7 @@ class _HomeScreenState extends State<HomeScreen> {
             centerTitle: true,
           ),
           bottomNavigationBar: BottomNavigationBar(
+            type: BottomNavigationBarType.fixed,
             onTap: (index){
               currentIndex = index;
               setState(() {
@@ -46,10 +47,10 @@ class _HomeScreenState extends State<HomeScreen> {
             currentIndex: currentIndex,
             items: [
               // في مشكلة في flutter اول ماالicons بتكتر لازم تدي لواحد فيهم نفس لون الbackground اللي عندهم اصلا دي مشكلة مشهورة في flutter
-              BottomNavigationBarItem(icon: ImageIcon(AssetImage('assets/images/quran.png'),),label: 'quran',backgroundColor: MyThemeData.colorGold),
-              BottomNavigationBarItem(icon: ImageIcon(AssetImage('assets/images/radio.png'),),label: 'radio',backgroundColor: MyThemeData.colorGold),
-              BottomNavigationBarItem(icon: ImageIcon(AssetImage('assets/images/sebha.png'),),label: 'sebha',backgroundColor: MyThemeData.colorGold),
-              BottomNavigationBarItem(icon: ImageIcon(AssetImage('assets/images/ahadeth.png'),),label: 'ahadeth',backgroundColor: MyThemeData.colorGold),
+              BottomNavigationBarItem(icon: ImageIcon(AssetImage('assets/images/quran.png'),),label: 'quran'),
+              BottomNavigationBarItem(icon: ImageIcon(AssetImage('assets/images/radio.png'),),label: 'radio'),
+              BottomNavigationBarItem(icon: ImageIcon(AssetImage('assets/images/sebha.png'),),label: 'sebha'),
+              BottomNavigationBarItem(icon: ImageIcon(AssetImage('assets/images/ahadeth.png'),),label: 'ahadeth'),
             ],
           ),
           body: tabs[currentIndex],

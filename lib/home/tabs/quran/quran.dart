@@ -128,9 +128,12 @@ class QuranScreen extends StatelessWidget {
           alignment: Alignment.center,
           child: Image.asset('assets/images/header_quran_bg.png'),
         ),
+        Divider(color: MyThemeData.colorGold,thickness: 2,),
+        Text('اسم السورة',style: Theme.of(context).textTheme.subtitle1,),
+        Divider(color: MyThemeData.colorGold,thickness: 2,),
         Expanded(
           child: ListView.separated(
-            itemBuilder: (context, index) => SuraNameItem(suarName[index]),
+            itemBuilder: (context, index) => SuraNameItem(suarName[index],index),
             separatorBuilder: (context, index) => Divider(
               thickness: 1,
               color: MyThemeData.colorGold,

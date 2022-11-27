@@ -1,11 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:islami/home/tabs/quran/sura_view.dart';
+import 'package:islami/my_theme.dart';
 
 import '../../Models/sura_detail_model.dart';
 
 class SuraNameItem extends StatelessWidget {
   String suraName = '';
-  SuraNameItem(this.suraName);
+  int index;
+  SuraNameItem(this.suraName,this.index);
   @override
   Widget build(BuildContext context) {
     return InkWell(
@@ -13,14 +15,13 @@ class SuraNameItem extends StatelessWidget {
         Navigator.pushNamed(
           context,
           SuraDetails.routeName,
-          arguments: SuraDetailsArgs(suraName),
+          arguments: SuraDetailsArgs(suraName,index),
         );
       },
-      child: Center(
-        child: Text(
-          suraName,
-          style: Theme.of(context).textTheme.headline1!.copyWith(fontSize: 25),
-        ),
+      child: Text(
+        textAlign: TextAlign.center,
+        suraName,
+        style: Theme.of(context).textTheme.subtitle1!.copyWith(color: MyThemeData.colorBlack),
       ),
     );
   }
