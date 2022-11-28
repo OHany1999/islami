@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:islami/home/home_screen.dart';
 import 'package:islami/home/tabs/ahadeth/ahadeth.dart';
+import 'package:islami/home/tabs/ahadeth/hadeth_details.dart';
 import 'package:islami/home/tabs/quran/quran.dart';
 import 'package:islami/home/tabs/radio.dart';
 import 'package:islami/home/tabs/sebha.dart';
@@ -19,6 +20,7 @@ void main() {
         SebhaScreen.routeName:(context)=>SebhaScreen(),
         AhadethScreen.routeName:(context)=>AhadethScreen(),
         SuraDetails.routeName:(context)=>SuraDetails(),
+        HadethDetails.routeName:(context)=>HadethDetails(),
       },
       theme: MyThemeData.lightTheme,
       darkTheme: MyThemeData.darkTheme,
