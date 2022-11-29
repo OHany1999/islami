@@ -7,10 +7,22 @@ import 'package:islami/home/tabs/radio.dart';
 import 'package:islami/home/tabs/sebha.dart';
 import 'package:islami/my_theme.dart';
 import 'package:islami/home/tabs/quran/sura_view.dart';
+import 'package:flutter_localizations/flutter_localizations.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 void main() {
   runApp(
     MaterialApp(
+      localizationsDelegates: [
+        AppLocalizations.delegate,
+        GlobalMaterialLocalizations.delegate,
+        GlobalWidgetsLocalizations.delegate,
+        GlobalCupertinoLocalizations.delegate,
+      ],
+      supportedLocales: [
+        Locale('en', ''), // English, no country code
+        Locale('ar', ''), // Spanish, no country code
+      ],
       debugShowCheckedModeBanner: false,
       initialRoute: HomeScreen.routeName,
       routes: {

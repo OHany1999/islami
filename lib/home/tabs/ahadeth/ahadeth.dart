@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:islami/home/Models/hadeth_model.dart';
 import 'package:islami/home/tabs/quran/sura_name_item.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 import '../../../my_theme.dart';
 import '../quran/sura_view.dart';
@@ -32,7 +33,7 @@ class _AhadethScreenState extends State<AhadethScreen> {
           thickness: 2,
         ),
         Text(
-          'Ahadeth',
+          AppLocalizations.of(context)!.ahdeth,
           textAlign: TextAlign.center,
           style: Theme.of(context).textTheme.subtitle1?.copyWith(
                 color: MyThemeData.colorBlack,
@@ -66,7 +67,6 @@ class _AhadethScreenState extends State<AhadethScreen> {
 
       for (int i = 0; i < AllAhdeth.length; i++) {
         String hadeth = AllAhdeth[i];
-        print(hadeth);
         List<String> HadethLine = hadeth.trim().split('\n');
         String title = HadethLine[0];
         HadethLine.removeAt(0);

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:islami/home/tabs/quran/sura_name_item.dart';
 import 'package:islami/my_theme.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class QuranScreen extends StatelessWidget {
   static const String routeName = 'quran';
@@ -129,7 +130,7 @@ class QuranScreen extends StatelessWidget {
           child: Image.asset('assets/images/header_quran_bg.png'),
         ),
         Divider(color: MyThemeData.colorGold,thickness: 2,),
-        Text('اسم السورة',style: Theme.of(context).textTheme.subtitle1,),
+        Text(AppLocalizations.of(context)!.suraname,style: Theme.of(context).textTheme.subtitle1,),
         Divider(color: MyThemeData.colorGold,thickness: 2,),
         Expanded(
           child: ListView.separated(
