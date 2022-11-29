@@ -24,15 +24,26 @@ class HadethDetails extends StatelessWidget {
 
             ),
           ),
-          body: ListView.builder(
-            itemBuilder: (context, index) => Text(
-              args.content[index],
-              style: Theme.of(context).textTheme.subtitle1?.copyWith(
-                color: MyThemeData.colorBlack,
+          body: Container(
+            margin: EdgeInsets.symmetric(horizontal: 25,vertical: 30),
+            decoration: BoxDecoration(
+              color: Colors.grey.shade300,
+              borderRadius: BorderRadius.only(
+                topLeft: Radius.circular(25),
+                bottomRight: Radius.circular(25),
               ),
-              textAlign: TextAlign.center,
+              border: Border.all(color: MyThemeData.colorGold,width: 2),
             ),
-            itemCount: args.content.length,
+            child: ListView.builder(
+              itemBuilder: (context, index) => Text(
+                args.content[index],
+                style: Theme.of(context).textTheme.subtitle1?.copyWith(
+                  color: MyThemeData.colorBlack,
+                ),
+                textAlign: TextAlign.center,
+              ),
+              itemCount: args.content.length,
+            ),
           ),
         ),
       ],
