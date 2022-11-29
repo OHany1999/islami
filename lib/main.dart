@@ -3,7 +3,7 @@ import 'package:islami/home/home_screen.dart';
 import 'package:islami/home/tabs/ahadeth/ahadeth.dart';
 import 'package:islami/home/tabs/ahadeth/hadeth_details.dart';
 import 'package:islami/home/tabs/quran/quran.dart';
-import 'package:islami/home/tabs/radio.dart';
+import 'package:islami/home/tabs/radio/radio.dart';
 import 'package:islami/home/tabs/sebha.dart';
 import 'package:islami/my_theme.dart';
 import 'package:islami/home/tabs/quran/sura_view.dart';
