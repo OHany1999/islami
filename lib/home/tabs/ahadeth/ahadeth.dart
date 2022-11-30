@@ -36,7 +36,7 @@ class _AhadethScreenState extends State<AhadethScreen> {
           AppLocalizations.of(context)!.ahdeth,
           textAlign: TextAlign.center,
           style: Theme.of(context).textTheme.subtitle1?.copyWith(
-                color: MyThemeData.colorBlack,
+                color: Theme.of(context).colorScheme.surface,
               ),
         ),
         Divider(

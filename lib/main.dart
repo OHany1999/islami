@@ -9,10 +9,23 @@ import 'package:islami/my_theme.dart';
 import 'package:islami/home/tabs/quran/sura_view.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:islami/providers/my_provider.dart';
+import 'package:provider/provider.dart';
 
 void main() {
   runApp(
-    MaterialApp(
+    ChangeNotifierProvider(
+      create: (context)=>MYProvider(),
+      child: MyApplication(),
+    ),
+  );
+}
+
+class MyApplication extends StatelessWidget{
+  @override
+  Widget build(BuildContext context) {
+    var provider = Provider.of<MYProvider>(context);
+    return MaterialApp(
       localizationsDelegates: [
         AppLocalizations.delegate,
         GlobalMaterialLocalizations.delegate,
@@ -23,6 +36,7 @@ void main() {
         Locale('en', ''), // English, no country code
         Locale('ar', ''), // Spanish, no country code
       ],
+      locale: Locale(provider.language),
       debugShowCheckedModeBanner: false,
       initialRoute: HomeScreen.routeName,
       routes: {
@@ -36,7 +50,7 @@ void main() {
       },
       theme: MyThemeData.lightTheme,
       darkTheme: MyThemeData.darkTheme,
-      themeMode: ThemeMode.light,
-    ),
-  );
+      themeMode: provider.themeMode,
+    );
+  }
 }

@@ -21,7 +21,7 @@ class SuraNameItem extends StatelessWidget {
       child: Text(
         textAlign: TextAlign.center,
         suraName,
-        style: Theme.of(context).textTheme.subtitle1!.copyWith(color: MyThemeData.colorBlack),
+        style: Theme.of(context).textTheme.subtitle1!.copyWith(color: Theme.of(context).colorScheme.surface),
       ),
     );
   }

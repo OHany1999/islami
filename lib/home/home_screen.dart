@@ -3,8 +3,11 @@ import 'package:islami/home/tabs/ahadeth/ahadeth.dart';
 import 'package:islami/home/tabs/quran/quran.dart';
 import 'package:islami/home/tabs/radio/radio.dart';
 import 'package:islami/home/tabs/sebha.dart';
+import 'package:islami/home/tabs/settings/settings.dart';
 import 'package:islami/my_theme.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:islami/providers/my_provider.dart';
+import 'package:provider/provider.dart';
 
 class HomeScreen extends StatefulWidget {
   static const String routeName = 'home';
@@ -20,14 +23,16 @@ class _HomeScreenState extends State<HomeScreen> {
     RadioScreen(),
     SebhaScreen(),
     AhadethScreen(),
+    SettingTab(),
   ];
 
   @override
   Widget build(BuildContext context) {
+    var provider =Provider.of<MYProvider>(context);
     return Stack(
       children: [
         Image.asset(
-          'assets/images/main_bg.png',
+          provider.getBackground(),
           width: double.infinity,
           height: double.infinity,
           fit: BoxFit.fill,
@@ -38,6 +43,7 @@ class _HomeScreenState extends State<HomeScreen> {
             centerTitle: true,
           ),
           bottomNavigationBar: BottomNavigationBar(
+            //بتحل مشكلة الicons اللي بتخلي الاسم ميظهرش واicon تختفي
             type: BottomNavigationBarType.fixed,
             onTap: (index){
               currentIndex = index;
@@ -52,6 +58,7 @@ class _HomeScreenState extends State<HomeScreen> {
               BottomNavigationBarItem(icon: ImageIcon(AssetImage('assets/images/radio.png'),),label: 'radio'),
               BottomNavigationBarItem(icon: ImageIcon(AssetImage('assets/images/sebha.png'),),label: 'sebha'),
               BottomNavigationBarItem(icon: ImageIcon(AssetImage('assets/images/ahadeth.png'),),label: 'ahadeth'),
+              BottomNavigationBarItem(icon: Icon(Icons.settings),label: 'settings'),
             ],
           ),
           body: tabs[currentIndex],

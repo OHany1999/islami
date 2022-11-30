@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:islami/my_theme.dart';
+import 'package:provider/provider.dart';
 
+import '../../../providers/my_provider.dart';
 import '../../Models/sura_detail_model.dart';
 
 class SuraDetails extends StatefulWidget {
@@ -17,6 +19,7 @@ class _SuraDetailsState extends State<SuraDetails> {
   @override
   Widget build(BuildContext context) {
     var args = ModalRoute.of(context)?.settings.arguments as SuraDetailsArgs;
+    var provider =Provider.of<MYProvider>(context);
     // عشان كل ما بيعمل setstate بbuild الwidget من اول وجديد
     // فاانا بقوله لو لقيت الlist مليانه متشغلش الfuunction تاني
     if (verses.isEmpty) {
@@ -26,7 +29,7 @@ class _SuraDetailsState extends State<SuraDetails> {
     return Stack(
       children: [
         Image.asset(
-          'assets/images/main_bg.png',
+          provider.getBackground(),
           width: double.infinity,
           height: double.infinity,
           fit: BoxFit.fill,
@@ -52,7 +55,7 @@ class _SuraDetailsState extends State<SuraDetails> {
                   itemBuilder: (context, index) => Text(
                     verses[index],
                     style: Theme.of(context).textTheme.subtitle1?.copyWith(
-                        color: MyThemeData.colorBlack, letterSpacing: 0.45,),
+                        color: Theme.of(context).colorScheme.onPrimary, letterSpacing: 0.45,),
                     textAlign: TextAlign.center,
                   ),
                 ),
