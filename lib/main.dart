@@ -4,13 +4,14 @@ import 'package:islami/home/tabs/ahadeth/ahadeth.dart';
 import 'package:islami/home/tabs/ahadeth/hadeth_details.dart';
 import 'package:islami/home/tabs/quran/quran.dart';
 import 'package:islami/home/tabs/radio/radio.dart';
-import 'package:islami/home/tabs/sebha.dart';
 import 'package:islami/my_theme.dart';
 import 'package:islami/home/tabs/quran/sura_view.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:islami/providers/my_provider.dart';
 import 'package:provider/provider.dart';
+
+import 'home/tabs/sebha/sebha.dart';
 
 void main() {
   runApp(

@@ -7,5 +7,6 @@
     "english":"English",
     "arabic":"Arabic",
     "light":"Light",
-    "dark":"Dark"
+    "dark":"Dark",
+    "numberPraises":"Number of praises"
 }
