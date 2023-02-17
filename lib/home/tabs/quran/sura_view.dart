@@ -52,11 +52,15 @@ class _SuraDetailsState extends State<SuraDetails> {
                     indent: 29,
                     endIndent: 29,
                   ),
-                  itemBuilder: (context, index) => Text(
-                    verses[index],
-                    style: Theme.of(context).textTheme.subtitle1?.copyWith(
-                        color: Theme.of(context).colorScheme.onPrimary, letterSpacing: 0.45,),
-                    textAlign: TextAlign.center,
+                  itemBuilder: (context, index) => Expanded(
+                    child: Text(
+                      verses[index],
+                      style: Theme.of(context).textTheme.subtitle1?.copyWith(
+                          color: Theme.of(context).colorScheme.onPrimary, letterSpacing: 0.45,),
+                      textAlign: TextAlign.center,
+                      maxLines: 10,
+
+                    ),
                   ),
                 ),
         ),

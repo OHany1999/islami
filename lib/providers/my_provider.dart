@@ -42,6 +42,16 @@ class MYProvider extends ChangeNotifier{
     }
     notifyListeners();
   }
+
+
+
+  var addController = TextEditingController();
+  List<String> tasbeh = [];
+  void addDataToList(){
+    tasbeh.add(addController.text);
+    addController.clear();
+  }
+  //-----------------------------------------
   String BodysebhaImage(){
     if(themeMode == ThemeMode.light){
       return 'assets/images/bodySebha.png';
@@ -49,6 +59,7 @@ class MYProvider extends ChangeNotifier{
       return 'assets/images/bodySebhaDark.png';
     }
   }
+  //-----------------------------------------
   String HeadsebhaImage(){
     if(themeMode == ThemeMode.light){
       return 'assets/images/headSebha.png';
